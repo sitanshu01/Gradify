@@ -11,6 +11,12 @@ export default function Home() {
   const [bgColor, setBgColor] = useState("bg-neutral-100");
   const colors = [
     "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#6366f1_100%)]",
+    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#f59e0b_100%)]",
+    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#10b981_100%)]",
+    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#ef4444_100%)]",
+    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#8b5cf6_100%)]",
+    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#f472b6_100%)]",
+    
   ];
 
   function handleColorChange(color: string) {
@@ -37,8 +43,8 @@ export default function Home() {
             </Button>
           </div>
           <div className="flex justify-center items-center flex-col space-y-2">
-            <h1 className="text-6xl font-medium">Create Beautiful,</h1>
-            <h1 className="text-6xl font-medium ">Pattern Backgrounds</h1>
+            <h1 className="sm:text-6xl text-4xl font-medium">Create Beautiful,</h1>
+            <h1 className="sm:text-6xl text-4xl  font-medium ">Pattern Backgrounds</h1>
             <p className="text-lg w-1/2 text-center text-neutral-500 font-medium mt-5">
               Professional-grade background patterns and gradients. Easily copy
               the code and seamlessly integrate it into your projects. Crafted
@@ -54,7 +60,7 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-5 mt-10 px-20">
+        <div className="flex flex-col items-center justify-center space-y-5 mt-10 sm:px-20 px-10 w-full">
           <div className="w-full">
             <h1 className="text-neutral-900 font-bold text-3xl">
               Pattern Library
@@ -71,13 +77,12 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex flex-wrap items-start mt-10 gap-5 w-full">
+          <div className="flex flex-wrap justify-center sm:justify-start items-start mt-10 gap-8 w-full">
             {colors.map((key, i) => (
               <Card
                 key={i}
                 handldeColorChange={handleColorChange}
                 color={key}
-                className="w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/5"
               />
             ))}
           </div>
