@@ -2,31 +2,16 @@
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { Button } from "@/components/ui/button";
-import Card from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { ChevronRightIcon, LucideMoveUpRight, Search } from "lucide-react";
+import { ChevronRightIcon, LucideMoveUpRight } from "lucide-react";
+
 import { useState } from "react";
+import { FAQs } from "@/components/faq";
 
 export default function Home() {
-  const [bgColor, setBgColor] = useState("bg-neutral-100");
-  const colors = [
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#6366f1_100%)]",
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#f59e0b_100%)]",
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#10b981_100%)]",
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#ef4444_100%)]",
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#8b5cf6_100%)]",
-    "bg-[radial-gradient(125%_125%_at_50%_10%,_white_40%,_#f472b6_100%)]",
-    
-  ];
-
-  function handleColorChange(color: string) {
-    setBgColor(color);
-  }
-
   return (
-    <div id="home">
+    <div id="#">
       <div
-        className={`fixed top-0 left-0 right-0 -z-10 h-screen w-full ${bgColor}`}
+        className={`fixed top-0 left-0 right-0 -z-10 h-screen w-full bg-[radial-gradient(125%_125%_at_50%_10%,_#e5e5e5_40%,_#8b5cf6_100%)]`}
       ></div>
       <div className="min-h-screen h-max w-full  py-5 flex flex-col items-center ">
         <Navbar />
@@ -60,34 +45,20 @@ export default function Home() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center space-y-5 mt-10 sm:px-20 px-10 w-full">
-          <div className="w-full">
-            <h1 className="text-neutral-900 font-bold text-3xl">
-              Pattern Library
-            </h1>
-            <p className="text-neutral-500 font-medium">
-              Explore our extensive library of patterns and gradients.
-            </p>
-          </div>
-          <div className="relative w-full">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-neutral-400" />
-            <Input
-              placeholder="Search Patterns..."
-              className="w-full shadow-sm pl-10"
-            />
-          </div>
-
-          <div className="flex flex-wrap justify-center sm:justify-start items-start mt-10 gap-8 w-full">
-            {colors.map((key, i) => (
-              <Card
-                key={i}
-                handldeColorChange={handleColorChange}
-                color={key}
-              />
-            ))}
-          </div>
+        <div id="features" className="flex flex-col items-center justify-center mt-10 w-full h-screen px-10 border-t-1 border-neutral-900 pt-10">
+          <h1 className="text-4xl font-bold">Gradients</h1>
+          <p className="text-lg text-neutral-500 font-medium mt-5">
+            Explore our collection of stunning gradients. Click on a gradient to
+            preview it and copy the code.
+          </p>
+          
+        </div>
+        <div id="faq" className="flex flex-col items-center justify-center my-10 w-full px-10 border-t-1 border-neutral-900 pt-10">
+          <h1 className="text-2xl sm:text-4xl font-bold mb-10 relative before:content-[''] before:absolute before:w-2/3 before:h-0.5 before:bg-neutral-800 before:-bottom-3 before:translate-1/4 ">Frequently Asked Questions</h1>
+          <FAQs/>
         </div>
       </div>
+      
       <Footer />
     </div>
   );

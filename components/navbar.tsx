@@ -7,9 +7,9 @@ const Navbar: React.FC = () => {
             <div className='text-base sm:text-lg font-bold'>Gradify</div>
             <div>
                 <ul className='flex space-x-2 sm:space-x-10'>
-                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium '>Home</a></li>
-                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium'>About</a></li>
-                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium'>Services</a></li>
+                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium '>Gradients</a></li>
+                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium'>Templates</a></li>
+                    <li><a href='#' className='text-gray-700 font-[400] hover:font-medium'>Fonts</a></li>
                 </ul>
             </div>
             <div>
