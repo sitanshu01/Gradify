@@ -49,7 +49,7 @@ export default function Home() {
             </div>
 
             <div className='flex flex-wrap items-start mt-10 gap-5 w-full'>
-              <Card handldeColorChange={handleColorChange} color="bg-blue-200" className="mt-10 w-3/5"/>
+              <Card handldeColorChange={handleColorChange} color="bg-linear-to-r/srgb from-indigo-500 to-teal-400 " className="mt-10 w-3/5"/>
               {/* <Card color="bg-green-200" className="mt-10 w-3/5"/>
               <Card color="bg-indigo-200" className="mt-10 w-3/5"/>
               <Card color="bg-rose-200" className="mt-10 w-3/5"/>
