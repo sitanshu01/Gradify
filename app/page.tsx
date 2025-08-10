@@ -10,6 +10,11 @@ import Footer from '@/components/footer';
 
 export default function Home() {
   const [bgColor, setBgColor] = useState("bg-neutral-100");
+
+  function handleColorChange(color: string) {
+    setBgColor(color);
+  }
+
   return (
     <div id='home'>
       <Background color= {bgColor} className="bg-no-repeat bg-cover bg-center">
@@ -44,11 +49,11 @@ export default function Home() {
             </div>
 
             <div className='flex flex-wrap items-start mt-10 gap-5 w-full'>
-              <Card color="bg-blue-200" className="mt-10 w-3/5"/>
-              <Card color="bg-green-200" className="mt-10 w-3/5"/>
+              <Card handldeColorChange={handleColorChange} color="bg-blue-200" className="mt-10 w-3/5"/>
+              {/* <Card color="bg-green-200" className="mt-10 w-3/5"/>
               <Card color="bg-indigo-200" className="mt-10 w-3/5"/>
               <Card color="bg-rose-200" className="mt-10 w-3/5"/>
-              <Card color="bg-neutral-200" className="mt-10 w-3/5"/>
+              <Card color="bg-neutral-200" className="mt-10 w-3/5"/> */}
             </div>
           </div>
         </div>

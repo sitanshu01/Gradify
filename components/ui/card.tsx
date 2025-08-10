@@ -1,21 +1,18 @@
-
 "use client";
 import React, { use } from "react";
 import { Button } from "@/components/ui/button";
 import { ChevronRightIcon, CopyIcon, EyeClosedIcon, LucideCopy, LucideEye } from "lucide-react";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
-    color?: string; // Tailwind color class, e.g. "bg-blue-500"
+    color?: string; // Tailwind color class, e.g. "bg-blue-500",
+    className?: string; // Additional classes for styling
+    handldeColorChange: (color: string) => void; // Function to handle color change
 }
 
-const Card: React.FC<CardProps> = ({ color = "bg-neutral-300", className = "", ...props }) => {
+const Card: React.FC<CardProps> = ({ handldeColorChange, color = "bg-neutral-300", className = "", ...props }) => {
     const CopyText = () => {
         navigator.clipboard.writeText(`className="${color}"`);
         alert("Code copied to clipboard!");
-    };
-    const Preview = (color:string) => {
-        console.log(`Previewing color: ${color}`);
-        document.getElementById("home")!.style.backgroundColor = color; 
     };
     return (
         <div
@@ -24,7 +21,7 @@ const Card: React.FC<CardProps> = ({ color = "bg-neutral-300", className = "", .
         >
             <div className="w-full h-full flex flex-col gap-5 justify-center items-center opacity-0 hover:opacity-100 hover:-translate-y-2 transition-all duration-300">
                 <h1 className="text-neutral-800 font-medium">{color}</h1>
-                <Button onClick={()=> Preview(color)} className="w-2/3" variant="secondary"> <LucideEye/> Preview</Button>
+                <Button onClick={()=> handldeColorChange(color)} className="w-2/3" variant="secondary"> <LucideEye/> Preview</Button>
                 <Button onClick={CopyText} className="w-2/3" variant="default"><LucideCopy/> Code</Button>
             </div>
         </div>
